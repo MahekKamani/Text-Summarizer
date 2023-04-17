@@ -1,1 +1,0 @@
-Special Thanks to Parth Sundarka for his contribution to the project
