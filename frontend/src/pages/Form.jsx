@@ -5,6 +5,7 @@ function Form({ setSummary, setOriginal }) {
   const [file, setfile] = useState(null);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [text, setText] = useState("");
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -12,7 +13,7 @@ function Form({ setSummary, setOriginal }) {
   };
 
   const handlefileChange = (event) => {
-    setfile(event.target.files[0]);
+      setfile(event.target.files[0]);
   };
 
   const handleSubmit = (event) => {
@@ -37,7 +38,23 @@ function Form({ setSummary, setOriginal }) {
             navigate('/summary');
           }
         });
-    } else if (message) {
+    } else if(text){
+      var a = {
+        "text" : text, 
+      };
+      fetch(`${process.env.REACT_APP_BASE_URL}/text`, {
+        method: "POST",
+        body: a,
+      })
+        .then((res) => res.json())
+        .then(({ summary }) => {
+          if (summary) {
+            setSummary(summary);
+            navigate('/summary');
+          }
+        });
+    }
+    else if (message) {
       setOriginal(message);
       fetch(`${process.env.REACT_APP_BASE_URL}/text`, {
         method: "POST",
@@ -61,8 +78,18 @@ function Form({ setSummary, setOriginal }) {
       <div className="nav">
         <h1>Text Summarizer</h1>
       </div>
+      <form>
+        
+      </form>
       <form onSubmit={handleSubmit}>
         <div className="Uploadfile">
+        <label htmlFor="text">Enter Your Text Here</label>
+        <input type="text" name="text" id="text" className="text2" onChange={(e)=> {
+          setText(e.value);
+          console.log(e.target.value);
+          console.log(e);
+        }}/>
+        <hr></hr>
           <h2>Upload the file</h2>
           <input
             type="file"
