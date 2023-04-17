@@ -20,6 +20,7 @@ def upload_file():
 
 @app.route('/text', methods=['POST'])
 def upload_text():
+    #parth
     text = request.get_json()['text']
     if not text:
         return 'No text provided', 400
