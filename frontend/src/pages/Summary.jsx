@@ -6,13 +6,15 @@ function Summary({ summary, original }) {
         <div className='nav'>
             <h1>Text Summarizer</h1>
         </div>
-        <div className='between'></div>
-        <div className='text'>
-          {original}
-        </div>
-        <h2 className='summary-hadding'>Summary</h2>
-        <div className='summary-text'>
-        {summary}
+        <div className='parent'>
+          <div className='child'>
+            <h2 className='text-hadding'>Text File</h2>
+            <div className='text'>{original}</div>
+          </div>
+          <div className='child'>
+            <h2 className='summary-hadding'>Summary</h2>
+            <div className='summary-text'>{summary}</div>
+          </div>
         </div>
     </div>
   )
