@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e5e5e5;
+  color: white;
+  font-family: Arial;
 }
 
 code {
@@ -44,6 +47,7 @@ h1 {
     font-family: sans-serif;
     padding-bottom: 25px;
     padding-top: 300px;
+    color: black;
 }
 
 .Uploadlogo {
@@ -55,13 +59,14 @@ h1 {
     cursor: pointer;
     font-family: sans-serif;
     border-radius: 5px;
-    background-color: #E50914;
+    background-color: #d62828;
     color: white;
     outline: none;
     border: none;
     height: 30px;
     width: 100px;
 }
+
 .summary {
     padding-top: 100px;
     justify-content: 'center';
@@ -70,27 +75,41 @@ h1 {
 
 .text {
     margin: auto;
-    width: 1000px;
-    height: 200px;
-    border: 2px solid black;
-    border-radius: 0.5pc;
-    background: #ffffff;
+    width: 500px;
+    height: 400px;
+    color: white;
+    padding: 20px;
+    text-align: justify;
+    border-radius: 10px;
+    background: #355070;
     overflow-y: scroll;
+    box-shadow: 5px 0 30px rgba(197, 219, 255, 0.08);
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.196), 0 10px 10px 0 rgba(0, 0, 0, 0.196);
 }
 
 .summary-hadding {
     font-family: sans-serif;
     padding-top: 10px;
     padding-bottom: 10px;
+    color: black;
+}
+
+.text-hadding {
+  font-family: sans-serif;
+  padding-bottom: 10px;
+  color: black;
 }
 
 .summary-text {
     margin: auto;
-    width: 1000px;
-    height: 200px;
-    border: 2px solid black;
-    border-radius: 0.5pc;
-    background: #ffffff;
+    width: 500px;
+    height: 400px;
+    color: white;
+    padding: 20px;
+    text-align: justify;
+    border-radius: 10px;
+    background: #355070;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.196), 0 10px 10px 0 rgba(0, 0, 0, 0.196);
 }
 
 .nav {
@@ -99,7 +118,7 @@ h1 {
     height: 80px;
     left: 0px;
     top: 0px;
-    background: #E50914;
+    background: #003049;
 }
 
 h1 {
@@ -154,7 +173,29 @@ h1 {
   color: #E50914;
 }
 
-.text2{
-  width: 200px;
-  height: 50px;
+.text::-webkit-scrollbar {
+  width: 13px;
+}
+
+.text::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
+.text::-webkit-scrollbar-thumb {
+  background-color: #ee6c4d;
+  border-radius: 100px;
+}
+
+.upload-box {
+  background-color: #98c1d9;
+  width: 500px;
+  height: 200px;
+  margin: auto;
+}
+
+.child {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 5rem 5rem;
 }
